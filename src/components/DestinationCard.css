@@ -1,0 +1,179 @@
+/* -- Destination Card ---------------------------------------------------- */
+.dest-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  transition: all 0.4s ease;
+  position: relative;
+}
+.dest-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* Image */
+.dest-card__img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+.dest-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.dest-card:hover .dest-card__img {
+  transform: scale(1.08);
+}
+.dest-card__img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
+}
+
+/* Tag */
+.dest-card__tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.8rem;
+  text-transform: uppercase;
+}
+
+/* Wishlist */
+.dest-card__wishlist {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  height: 36px;
+  width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.dest-card__wishlist:hover {
+  background: rgba(239, 68, 68, 0.8);
+  border-color: transparent;
+}
+
+/* Duration badge */
+.dest-card__duration {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Body */
+.dest-card__body { padding: 1.25rem 1.25rem 1.4rem; }
+
+.dest-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.dest-card__name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+.dest-card__country {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin: 0.2rem 0 0;
+}
+
+/* Rating */
+.dest-card__rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+  flex-shrink: 0;
+}
+.dest-card__stars { display: flex; gap: 1px; }
+.star { color: #ddd; font-size: 0.8rem; }
+.star--filled { color: #f59e0b; }
+.dest-card__rating-val {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+.dest-card__reviews {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Description */
+.dest-card__desc {
+  color: var(--text-muted);
+  font-size: 0.87rem;
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Footer */
+.dest-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--card-border);
+  padding-top: 1rem;
+}
+.dest-card__price { display: flex; align-items: baseline; gap: 0.2rem; }
+.dest-card__price-from { color: var(--text-muted); font-size: 0.78rem; }
+.dest-card__price-val  { color: var(--accent); font-size: 1.4rem; font-weight: 800; }
+.dest-card__price-per  { color: var(--text-muted); font-size: 0.78rem; }
+.dest-card__btn {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.55rem 1.25rem;
+  transition: all 0.3s ease;
+}
+.dest-card__btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.45);
+}
+
+/* Booked state */
+.dest-card__btn--booked { background: linear-gradient(135deg, #22c55e, #16a34a); }
+.dest-card__wishlist--active { background: rgba(239, 68, 68, 0.7); border-color: transparent; color: #fff; }
